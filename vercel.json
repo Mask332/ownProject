@@ -1,16 +1,23 @@
 {
-  "redirects": [
-    {
-      "source": "/index_en.html",
-      "destination": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "lan",
-          "value": "en"
-        }
-      ],
-      "statusCode": 301
-    }
-  ]
-}
+    "redirects": [
+      {
+        "source": "/index_en.html",
+        "destination": "/?lan=en",
+        "permanent": true
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/",
+        "has": [
+          {
+            "type": "query",
+            "key": "lan",
+            "value": "en"
+          }
+        ],
+        "destination": "/index_en.html"
+      }
+    ]
+  }
+  
