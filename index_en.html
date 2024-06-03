@@ -121,10 +121,10 @@
             <div class="content">
               <p data-text-key="section2Title">
                 Welcome to the official website of the International
-                Anti-Criminal and Anti-Terrorist Committee of the Lviv
-                Region. Our committee provides coordination and cooperation in
-                the fight against criminal and terrorist activities to ensure
-                the security of our region and the international community.
+                Anti-Criminal and Anti-Terrorist Committee of the Lviv Region.
+                Our committee provides coordination and cooperation in the fight
+                against criminal and terrorist activities to ensure the security
+                of our region and the international community.
               </p>
             </div>
           </div>
@@ -136,12 +136,12 @@
             <div class="content">
               <h2 data-text-key="section3Title" class="major">About Us</h2>
               <p data-text-key="section3SubTitle">
-                The International Anti-Criminal and Anti-Terrorist Committee
-                of the Lviv Region is an organization that unites highly
-                qualified specialists in the field of combating crime and
-                terrorism. Our mission is to ensure the safety of citizens and
-                strengthen the legal order through effective cooperation and
-                innovative approaches.
+                The International Anti-Criminal and Anti-Terrorist Committee of
+                the Lviv Region is an organization that unites highly qualified
+                specialists in the field of combating crime and terrorism. Our
+                mission is to ensure the safety of citizens and strengthen the
+                legal order through effective cooperation and innovative
+                approaches.
               </p>
             </div>
           </div>
@@ -305,21 +305,13 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      // Get the current URL
-      var currentUrl = window.location.href;
-
-      // Check if the "lan" parameter is already present
-      if (!currentUrl.includes("lan=")) {
-        // Check if the URL already contains a query string
-        var separator = currentUrl.includes("?") ? "&" : "?";
-
-        // Add the "lan" parameter
-        var newUrl = currentUrl + separator + "lan=en";
-
-        // Redirect to the new URL
-        window.location.href = newUrl;
-      }
-    </script>
+		let currentUrl = window.location.href;
+		if (!currentUrl.includes("lan=")) {
+		  let separator = currentUrl.includes("?") ? "&" : "?";
+		  let newUrl = currentUrl + separator + "lan=en";
+		  window.location.href = newUrl;
+		}
+	  </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
