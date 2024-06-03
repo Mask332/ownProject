@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "destination": "https://www.maak-lviv.com.ua/$1",
+        "permanent": true
+      }
+    ]
+  }
+  
