@@ -61,7 +61,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-            Polski
+              Polski
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="/">Українська</a>
@@ -318,16 +318,42 @@
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        function hideHtmlInUrl() {
-          let currentUrl = window.location.href;
-          let urlObj = new URL(currentUrl);
-          if (urlObj.pathname.includes(".html")) {
-            let newPath = urlObj.pathname.replace(/index_\w+\.html/, "");
-            let newUrl = `${urlObj.origin}${newPath}${urlObj.search}`;
-            window.history.replaceState({}, document.title, newUrl);
-          }
+        function getLangFromUrl() {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get("lan") || "ua";
         }
-        hideHtmlInUrl();
+
+        function loadContent(lang) {
+          let filePath = `index_${lang}.html`;
+
+          // Fetch the corresponding HTML file based on the language
+          fetch(filePath)
+            .then((response) => {
+              if (response.ok) {
+                return response.text();
+              } else {
+                throw new Error("Language file not found");
+              }
+            })
+            .then((html) => {
+              document.getElementById("page-wrapper").innerHTML = html;
+            })
+            .catch((error) => {
+              console.error("Error loading content:", error);
+            });
+        }
+
+        let lang = getLangFromUrl();
+        loadContent(lang);
+
+        // Hide .html in URL
+        let currentUrl = window.location.href;
+        let urlObj = new URL(currentUrl);
+        if (urlObj.pathname.includes(".html")) {
+          let newPath = urlObj.pathname.replace(/index_\w+\.html/, "");
+          let newUrl = `${urlObj.origin}${newPath}${urlObj.search}`;
+          window.history.replaceState({}, document.title, newUrl);
+        }
       });
     </script>
   </body>
