@@ -1,7 +1,7 @@
 {
     "redirects": [
       {
-        "source": "./index_en.html",
+        "source": "/index_en.html",
         "destination": "/?lan=en",
         "permanent": true
       }
@@ -17,6 +17,21 @@
           }
         ],
         "destination": "/index_en.html"
+      },
+      {
+        "source": "/",
+        "has": [
+          {
+            "type": "query",
+            "key": "lan",
+            "value": "ua"
+          }
+        ],
+        "destination": "/index.html"
+      },
+      {
+        "source": "/",
+        "destination": "/index.html"
       }
     ]
   }
