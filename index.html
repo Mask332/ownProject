@@ -21,11 +21,10 @@
 								  Українська
 								</button>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								  <a class="dropdown-item" onclik href="./index_en.html">English</a>
-								  <!-- <a class="dropdown-item" href="./index_fr.html">French</a> -->
-								  <a class="dropdown-item" href="./index_pl.html">Polski</a>
-								  <a class="dropdown-item" href="./index_it.html">Italian</a>
-								  <a class="dropdown-item" href="./index_ger.html">German</a>
+									<a class="dropdown-item" onclick="setLanguage('en')" href="#">English</a>
+									<a class="dropdown-item" onclick="setLanguage('pl')" href="#">Polski</a>
+									<a class="dropdown-item" onclick="setLanguage('it')" href="#">Italian</a>
+									<a class="dropdown-item" onclick="setLanguage('ger')" href="#">German</a>
 
 								</div>
 							  </div>
@@ -154,12 +153,31 @@
 			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 			<script>
-				let currentUrl = window.location.href;
-				if (!currentUrl.includes('lan=')) {
-					let separator = currentUrl.includes('?') ? '&' : '?';
-					let newUrl = currentUrl + separator + 'lan=ua';
-					window.location.href = newUrl;
+				function setLanguage(language) {
+					const currentUrl = window.location.href;
+					const urlParams = new URLSearchParams(window.location.search);
+					if (urlParams.get('lan') !== language) {
+						const newUrl = currentUrl.split('?')[0] + '?lan=' + language;
+						window.location.href = newUrl;
+					}
 				}
+		
+				document.addEventListener('DOMContentLoaded', function() {
+					const currentUrl = window.location.href;
+					const urlParams = new URLSearchParams(window.location.search);
+		
+					// Check if 'lan=' is not in the URL and add 'lan=ua' if needed
+					if (!urlParams.has('lan')) {
+						const separator = currentUrl.includes('?') ? '&' : '?';
+						const newUrl = currentUrl + separator + 'lan=ua';
+						window.location.href = newUrl;
+					} 
+		
+					// Redirect from 'index_en.html' to '/?lan=en'
+					if (urlParams.get('lan') === 'en' && window.location.pathname === '/index_en.html') {
+						window.location.replace('/?lan=en');
+					}
+				});
 			</script>
 	</body>
 </html>
