@@ -159,5 +159,14 @@
 				  displaySelected(selectedText);
 				}
 			  </script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('lan') === 'fr' && window.location.pathname === '/index_fr.html') {
+window.location.replace('/?lan=fr');
+}
+});
+</script>
 	</body>
 </html>

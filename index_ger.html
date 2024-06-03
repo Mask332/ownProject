@@ -153,5 +153,14 @@
 					window.location.href = newUrl;
 				}
 			</script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('lan') === 'de' && window.location.pathname === '/index_ger.html') {
+window.location.replace('/?lan=de');
+}
+});
+</script>
 	</body>
 </html>
