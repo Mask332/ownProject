@@ -25,7 +25,6 @@
 									<a class="dropdown-item" onclick="setLanguage('pl')" href="#">Polski</a>
 									<a class="dropdown-item" onclick="setLanguage('it')" href="#">Italian</a>
 									<a class="dropdown-item" onclick="setLanguage('ger')" href="#">German</a>
-
 								</div>
 							  </div>
 							<a data-text-key="menuHeader"  href="#menu">Меню</a>
@@ -169,24 +168,20 @@
 				}
 		
 				document.addEventListener('DOMContentLoaded', function() {
-					const currentUrl = window.location.href;
 					const urlParams = new URLSearchParams(window.location.search);
-		
-					// Redirect from 'index_en.html' to '/?lan=en' if necessary
-					if (urlParams.has('lan')) {
-						const lang = urlParams.get('lan');
-						const langToFile = {
-							'en': 'index_en.html',
-							'pl': 'index_pl.html',
-							'it': 'index_it.html',
-							'de': 'index_ger.html'
-						};
-						if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-							const file = langToFile[lang];
-							if (file) {
-								window.location.replace(file + '?lan=' + lang);
-							}
-						}
+					const lang = urlParams.get('lan');
+					const currentPath = window.location.pathname;
+					
+					// Check if the current path matches the expected path for the language
+					const langToFile = {
+						'en': '/index_en.html',
+						'pl': '/index_pl.html',
+						'it': '/index_it.html',
+						'de': '/index_ger.html'
+					};
+					
+					if (lang && langToFile[lang] && currentPath !== langToFile[lang]) {
+						window.location.replace(langToFile[lang] + '?lan=' + lang);
 					}
 				});
 			</script>
