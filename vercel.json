@@ -1,34 +1,31 @@
 {
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/index_en.html",
-      "destination": "/?lan=en"
-    },
-    {
-      "source": "/",
-      "destination": "/index.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "lan",
-          "value": "ua"
-        }
-      ]
-    },
-    {
-      "source": "/index_en.html",
-      "destination": "/index_en.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "lan",
-          "value": "en"
-        }
-      ]
-    }
-  ]
-}
+    "rewrites": [
+      {
+        "source": "/",
+        "destination": "/index.html",
+        "has": [
+          {
+            "type": "query",
+            "key": "lan",
+            "value": "(ua|en)"
+          }
+        ]
+      },
+      {
+        "source": "/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/",
+        "destination": "/index_en.html",
+        "has": [
+          {
+            "type": "query",
+            "key": "lan",
+            "value": "en"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -164,5 +164,18 @@
 					window.location.href = newUrl;
 				}
 			</script> -->
+
+			<script>
+				document.addEventListener('DOMContentLoaded', function() {
+				  const urlParams = new URLSearchParams(window.location.search);
+				  const lan = urlParams.get('lan');
+			  
+				  if (lan === 'en' && window.location.pathname !== '/index_en.html') {
+					window.location.replace('/index_en.html?lan=en');
+				  } else if (lan === 'ua' && window.location.pathname !== '/index.html') {
+					window.location.replace('/index.html?lan=ua');
+				  }
+				});
+			  </script>
 	</body>
 </html>
