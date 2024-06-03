@@ -7,7 +7,7 @@
           {
             "type": "query",
             "key": "lan",
-            "value": "(ua|pl|it|ger)"
+            "value": "ua"
           }
         ]
       },
