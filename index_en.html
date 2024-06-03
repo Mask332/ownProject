@@ -60,7 +60,7 @@
               <a class="dropdown-item" href="/">Українська</a>
               <a class="dropdown-item" href="./index_pl.html">Polski</a>
               <a class="dropdown-item" href="./index_it.html">Italian</a>
-              <a class="dropdown-item" href="./index_ger.html">German</a>
+              <a class="dropdown-item" href="./index_de.html">German</a>
               <!-- <a class="dropdown-item" href="#">French</a> -->
             </div>
           </div>
@@ -313,28 +313,45 @@
 		}
 	  </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Function to remove the .html from the URL and redirect
-        function hideHtmlInUrl() {
-          let currentUrl = window.location.href;
-          let urlObj = new URL(currentUrl);
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	  function getLangFromUrl() {
+		const urlParams = new URLSearchParams(window.location.search);
+		return urlParams.get('lan') || 'ua';
+	  }
 
-          // Check if the URL pathname includes a .html file
-          if (urlObj.pathname.includes(".html")) {
-            // Extract the file name without .html
-            let newPath = urlObj.pathname.replace(/index_\w+\.html/, "");
+	  function loadContent(lang) {
+		let filePath = `index_${lang}.html`;
 
-            // Construct the new URL without .html
-            let newUrl = `${urlObj.origin}${newPath}${urlObj.search}`;
+		// Fetch the corresponding HTML file based on the language
+		fetch(filePath)
+		  .then(response => {
+			if (response.ok) {
+			  return response.text();
+			} else {
+			  throw new Error('Language file not found');
+			}
+		  })
+		  .then(html => {
+			document.getElementById('page-wrapper').innerHTML = html;
+		  })
+		  .catch(error => {
+			console.error('Error loading content:', error);
+		  });
+	  }
 
-            // Change the browser's address without reloading the page
-            window.history.replaceState({}, document.title, newUrl);
-          }
-        }
+	  let lang = getLangFromUrl();
+	  loadContent(lang);
 
-        hideHtmlInUrl();
-      });
-    </script>
+	  // Hide .html in URL
+	  let currentUrl = window.location.href;
+	  let urlObj = new URL(currentUrl);
+	  if (urlObj.pathname.includes(".html")) {
+		let newPath = urlObj.pathname.replace(/index_\w+\.html/, "");
+		let newUrl = `${urlObj.origin}${newPath}${urlObj.search}`;
+		window.history.replaceState({}, document.title, newUrl);
+	  }
+	});
+  </script>
   </body>
 </html>
