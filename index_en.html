@@ -175,7 +175,7 @@
 			// Check if the URL pathname includes a .html file
 			if (urlObj.pathname.includes('.html')) {
 				// Extract the file name without .html
-				let newPath = urlObj.pathname.replace(/\/index_\w+\.html/, '/html');
+				let newPath = urlObj.pathname.replace(/index_\w+\.html/, '');
 	
 				// Construct the new URL without .html
 				let newUrl = `${urlObj.origin}${newPath}${urlObj.search}`;
