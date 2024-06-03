@@ -25,7 +25,6 @@
 								  <a class="dropdown-item" href="./index_pl.html">Polski</a>
 								  <a class="dropdown-item" href="./index_it.html">Italian</a>
 								  <a class="dropdown-item" href="./index_ger.html">German</a> -->
-
                   <a class="dropdown-item" href="./?lan=en">English</a>
                   <a class="dropdown-item" href="./?lan=pl">Polski</a>
                   <a class="dropdown-item" href="./?lan=it">Italian</a>
@@ -171,12 +170,17 @@
           const urlParams = new URLSearchParams(window.location.search);
           const lan = urlParams.get('lan');
       
-          if (lan === 'en' && window.location.pathname !== '/index_en.html') {
-            window.location.replace('/index_en.html?lan=en');
-          } else if (lan === 'ua' && window.location.pathname !== '/index.html') {
-            window.location.replace('/index.html?lan=ua');
+          if (!lan) {
+            // Default to Ukrainian if no language is specified
+            window.location.replace('/?lan=ua');
+          } else if (lan === 'en' && window.location.pathname !== '/') {
+            window.history.replaceState(null, null, '/?lan=en');
+          } else if (lan === 'ua' && window.location.pathname !== '/') {
+            window.history.replaceState(null, null, '/?lan=ua');
           }
+          // Handle other languages if needed
         });
       </script>
+      
 	</body>
 </html>

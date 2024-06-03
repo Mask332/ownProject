@@ -7,13 +7,9 @@
           {
             "type": "query",
             "key": "lan",
-            "value": "(ua|en)"
+            "value": "(ua|pl|it|ger)"
           }
         ]
-      },
-      {
-        "source": "/",
-        "destination": "/index.html"
       },
       {
         "source": "/",
@@ -25,6 +21,10 @@
             "value": "en"
           }
         ]
+      },
+      {
+        "source": "/",
+        "destination": "/index.html"
       }
     ]
   }
