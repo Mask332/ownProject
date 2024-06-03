@@ -159,8 +159,9 @@
 						const newUrl = currentUrl + separator + 'lan=en';
 						window.location.href = newUrl;
 					} 
-					
+					console.log(22, urlParams);
 					// Redirect from 'index_en.html' to '/?lan=en'
+					console.log(11, window.location.pathname);
 					if (urlParams.get('lan') === 'en' && window.location.pathname === '/index_en.html') {
 						window.location.replace('/?lan=en');
 					}
