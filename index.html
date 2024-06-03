@@ -21,11 +21,11 @@
 								  Українська
 								</button>
 								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								  <a class="dropdown-item" onclik href="./index_en.html">English</a>
-								  <!-- <a class="dropdown-item" href="./index_fr.html">French</a> -->
-								  <a class="dropdown-item" href="./index_pl.html">Polski</a>
-								  <a class="dropdown-item" href="./index_it.html">Italian</a>
-								  <a class="dropdown-item" href="./index_ger.html">German</a>
+                 
+                  <a class="dropdown-item" onclick href="./?lan=en">English</a>
+                  <a class="dropdown-item" onclick href="./?lan=pl">Polski</a>
+                  <a class="dropdown-item" onclick href="./?lan=it">Italian</a>
+                  <a class="dropdown-item" onclick href="./?lan=ger">German</a>
 
 								</div>
 							  </div>
@@ -161,5 +161,19 @@
 					window.location.href = newUrl;
 				}
 			</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lan = urlParams.get('lan');
+
+    if (lan === 'en') {
+      window.location.replace('./index_en.html?lan=en');
+    } else if (lan === 'ua') {
+      window.location.replace('./index.html?lan=ua');
+    }
+    // Add additional language handling as needed
+  });
+</script>
 	</body>
 </html>
