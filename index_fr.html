@@ -323,5 +323,29 @@
         displaySelected(selectedText);
       }
     </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      // Function to remove the .html from the URL and redirect
+      function hideHtmlInUrl() {
+          let currentUrl = window.location.href;
+          let urlObj = new URL(currentUrl);
+  
+          // Check if the URL pathname includes a .html file
+          if (urlObj.pathname.includes('.html')) {
+              // Extract the file name without .html
+              let newPath = urlObj.pathname.replace(/index_\w+\.html/, '');
+  
+              // Construct the new URL without .html
+              let newUrl = `${urlObj.origin}${newPath}${urlObj.search}`;
+  
+              // Change the browser's address without reloading the page
+              window.history.replaceState({}, document.title, newUrl);
+          }
+      }
+  
+      hideHtmlInUrl();
+  });
+  </script>
   </body>
 </html>
