@@ -105,7 +105,7 @@ input, select, textarea {
 
 	body {
 		/* background-color: #b9ab15; */
-		background-image: linear-gradient(to bottom, #b9ab15 0%, #b9ab15 90%, #2e3141 90%, #2e3141 100%);
+		background-image: linear-gradient(to bottom, #e9d81b 0%, #e9d81b 90%, #2e3141 90%, #2e3141 100%);
 		
 		background-size: auto,
  cover;
@@ -4214,4 +4214,8 @@ input, select, textarea {
 		.hyperToArticle:hover{
 			color:#45558d !important;
 			text-decoration: none;
+		}
+
+		.subText{
+			color:gray !important;
 		}
