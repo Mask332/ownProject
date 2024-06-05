@@ -382,7 +382,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         function getLangFromUrl() {
           const urlParams = new URLSearchParams(window.location.search);
-          return urlParams.get("lan") || "ua";
+          return urlParams.get("lan") || "";
         }
 
         function loadContent(lang) {
