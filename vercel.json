@@ -1,29 +1,24 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/en",
-      "destination": "/index_en.html",
-      "permanent": true
+      "destination": "/index_en.html"
     },
     {
       "source": "/pl",
-      "destination": "/index_pl.html",
-      "permanent": true
+      "destination": "/index_pl.html"
     },
     {
       "source": "/it",
-      "destination": "/index_it.html",
-      "permanent": true
+      "destination": "/index_it.html"
     },
     {
       "source": "/de",
-      "destination": "/index_de.html",
-      "permanent": true
+      "destination": "/index_de.html"
     },
     {
       "source": "/fr",
-      "destination": "/index_fr.html",
-      "permanent": true
+      "destination": "/index_fr.html"
     }
   ]
 }
