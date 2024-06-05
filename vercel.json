@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/en",
+      "destination": "/index_en.html",
+      "permanent": true
+    },
+    {
+      "source": "/pl",
+      "destination": "/index_pl.html",
+      "permanent": true
+    },
+    {
+      "source": "/it",
+      "destination": "/index_it.html",
+      "permanent": true
+    },
+    {
+      "source": "/de",
+      "destination": "/index_de.html",
+      "permanent": true
+    },
+    {
+      "source": "/fr",
+      "destination": "/index_fr.html",
+      "permanent": true
+    }
+  ]
+}
