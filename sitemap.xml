@@ -1,39 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
-<url>
-  <loc>http://www.maak-lviv.com.ua/index.html</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc>http://www.maak-lviv.com.ua/en</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc>http://www.maak-lviv.com.ua/pl</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc>http://www.maak-lviv.com.ua/it</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc>http://www.maak-lviv.com.ua/de</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc>http://www.maak-lviv.com.ua/fr</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc>http://www.maak-lviv.com.ua/tel:0679272919</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc>http://www.maak-lviv.com.ua/</loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
-<url>
-  <loc></loc>
-  <lastmod>2024-06-05</lastmod>
-</url>
+  <url>
+    <loc>http://www.maak-lviv.com.ua/index.html</loc>
+    <lastmod>2024-06-05</lastmod>
+  </url>
+  <url>
+    <loc>http://www.maak-lviv.com.ua/en</loc>
+    <lastmod>2024-06-05</lastmod>
+  </url>
+  <url>
+    <loc>http://www.maak-lviv.com.ua/pl</loc>
+    <lastmod>2024-06-05</lastmod>
+  </url>
+  <url>
+    <loc>http://www.maak-lviv.com.ua/it</loc>
+    <lastmod>2024-06-05</lastmod>
+  </url>
+  <url>
+    <loc>http://www.maak-lviv.com.ua/de</loc>
+    <lastmod>2024-06-05</lastmod>
+  </url>
+  <url>
+    <loc>http://www.maak-lviv.com.ua/fr</loc>
+    <lastmod>2024-06-05</lastmod>
+  </url>
+  <url>
+    <loc>http://www.maak-lviv.com.ua/</loc>
+    <lastmod>2024-06-05</lastmod>
+  </url>
 </urlset>
